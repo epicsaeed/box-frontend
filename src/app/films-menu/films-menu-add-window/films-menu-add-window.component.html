@@ -1,0 +1,49 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-auto">
+            <img *ngIf="posterAvailable" img [src]="film.poster" alt="poster" height="290" width="190">
+        </div>
+        <!--        FIELDS ROW          -->
+        <div class="col-md-auto">
+            <h1>Add Film</h1>
+            <hr>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Title</span>
+                    </div>
+                    <input type="text" class="form-control" [(ngModel)]="film.title">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Release Year</span>
+                    </div>
+                    <input type="text" class="form-control" [(ngModel)]="film.year">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Genre</span>
+                    </div>
+                    <input type="text" class="form-control" [(ngModel)]="film.genre">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Runtime (minutes)</span>
+                    </div>
+                    <input type="text" class="form-control" [(ngModel)]="film.runtime">
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <hr>
+        <div class="col">
+            <button mat-flat-button class="cancel-btn" color="primary" (click)="closeDialog()">Cancel</button>            
+            <button mat-flat-button class="add-btn" color="warn" (click)="addClicked()">Add</button>
+        </div>
+        <div class="col">
+            <div class="fetch-btn-container">
+                <button mat-flat-button color="primary" class="fetch-button" (click)="fetchDetails()">Fetch Details</button>
+            </div>
+        </div>
+    </div>
+</div>
