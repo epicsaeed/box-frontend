@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FilmsMenuAddWindowComponent } from '../films-menu-add-window/films-menu-add-window.component';
 
@@ -11,11 +11,17 @@ export class FilmsMenuToolbarComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
 
+  @Output("refreshFilmsList") refreshFilmsList: EventEmitter<any> = new EventEmitter();
+
   ngOnInit(): void {
   }
 
   addFilmClicked():void{
     const dialogRef = this.dialog.open(FilmsMenuAddWindowComponent);
+  }
+  
+  refreshClicked(){
+    this.refreshFilmsList.emit();
   }
 
 }

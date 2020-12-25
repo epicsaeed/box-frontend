@@ -19,6 +19,9 @@ import { FilmsMenuToolbarComponent } from './films-menu/films-menu-toolbar/films
 import { FilmsMenuAddWindowComponent } from './films-menu/films-menu-add-window/films-menu-add-window.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DeleteDialogComponent } from './films-menu/delete-dialog/delete-dialog.component';
+import { EditWindowComponent } from './films-menu/edit-window/edit-window.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
     FilmsMenuComponent,
     HeaderComponent,
     FilmsMenuToolbarComponent,
-    FilmsMenuAddWindowComponent
+    FilmsMenuAddWindowComponent,
+    DeleteDialogComponent,
+    EditWindowComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatButtonModule,
     MatDialogModule,
     MatGridListModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

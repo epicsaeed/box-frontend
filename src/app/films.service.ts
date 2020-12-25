@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -18,11 +19,17 @@ export class FilmsService {
 
   //returns poster of passed film title
   getFilmPoster(title:String):Observable<any>{
-    return this._http.get<any>(this._APIurl+"/posters/"+title);
+    return this._http.get(this._APIurl+"/posters/"+title);
   }
 
   //sends film to rest API
   addNewFilm(film:any):Observable<any>{
     return this._http.post(this._APIurl + "/add",film);
   }
+
+  //deletes film from database
+  deleteFilm(title:String):Observable<any>{
+    return this._http.get(this._APIurl + "/delete/"+title);
+  }
+
 }

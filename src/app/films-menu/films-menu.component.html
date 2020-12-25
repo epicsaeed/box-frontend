@@ -1,4 +1,5 @@
-<app-films-menu-toolbar></app-films-menu-toolbar>
+<app-films-menu-toolbar (refreshFilmsList)="refreshFilmsList()"></app-films-menu-toolbar>
+
 <div class="content">
     <div fxLayout="row wrap" fxLayoutGap="16px grid">
         <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let film of films">
@@ -9,11 +10,12 @@
                 </mat-card-header>
                 <img mat-card-image [src]="film.poster" alt="film title">
                 <mat-card-content>
-                    <p>{{film.genre}}</p>
+                    <b><p>{{film.genre}}</p></b>
                     <p>{{film.runtime}} minutes</p>
                 </mat-card-content>
                 <mat-card-actions>
-                    <button mat-flat-button color="primary">EDIT</button>
+                    <button mat-flat-button color="primary" (click)="editClicked(film)">EDIT</button>
+                    <button mat-flat-button color="warn" (click)="deleteClicked(film)">DELETE</button>
                 </mat-card-actions>
             </mat-card>
         </div>

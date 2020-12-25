@@ -12,6 +12,13 @@ export class FilmsMenuAddWindowComponent implements OnInit {
   constructor( public dialogRef: MatDialogRef<FilmsMenuAddWindowComponent>, private _FilmAPI: FilmsService ) { }
 
   posterAvailable = false;
+  showSuccess = false;
+  showFailure = false;
+
+  public response = {
+    code:"",
+    message:""
+  }
 
   public film = {
     title:"",
@@ -29,16 +36,20 @@ export class FilmsMenuAddWindowComponent implements OnInit {
   }
 
   fetchDetails(){
-    this._FilmAPI.getFilmPoster(this.film.title).subscribe(data => {this.film.poster = data.poster});
-    if(this.film.poster.length != 0)
+    this._FilmAPI.getFilmPoster(this.film.title).subscribe(data => {
+      this.film.poster = data.poster;
       this.posterAvailable = true;
-  }
+    });
+``  }
 
   addClicked(){
     this._FilmAPI.addNewFilm(this.film).subscribe( data => { 
-      console.log(data.code);
-      console.log(data.message);
-
+      this.response.code = data.code;
+      this.response.message = data.message;
+      if(this.response.code == "success") this.showSuccess = true;
+      if(this.response.code == "fail") this.showFailure = true;
     })
+  
+
   }
 }

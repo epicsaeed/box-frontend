@@ -1,0 +1,9 @@
+<h3>Confirm Delete</h3>
+<hr>
+<p>Are you sure you want to delete <b>{{data.film.title}}</b>?</p>
+<small>Note: This action cannot be undone</small>
+<br>
+<ngb-alert *ngIf="showSuccess" type="success">{{response.message}}</ngb-alert>
+<ngb-alert *ngIf="showFailure" type="success">{{response.message}}</ngb-alert>
+<button mat-flat-button color="primary" (click)="cancelClicked()">CANCEL</button>
+<button mat-flat-button color="warn" (click)="confirmClicked()">CONFIRM</button>
