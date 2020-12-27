@@ -13,6 +13,16 @@ export class EditWindowComponent implements OnInit {
     private _FilmAPI: FilmsService,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
+    //current_film!:any;
+
+    current_film = {
+      poster: this.data.film.poster,
+      title: this.data.film.title,
+      genre: this.data.film.genre,
+      year: this.data.film.year,
+      runtime: this.data.film.runtime
+    }
+
   response = {
     code:"",
     message:""

@@ -1,0 +1,74 @@
+<div class="container-fluid">
+    <div class="register-box">
+        <h1>Registeration</h1>
+        <hr>
+        <div class="table">
+            <div class="row">
+                <div class="col-md-auto">
+                    <mat-form-field appearance="fill">
+                        <mat-label>First name</mat-label>
+                        <input matInput [(ngModel)]="user.firstname" required>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-auto">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Last name</mat-label>
+                        <input matInput [(ngModel)]="user.lastname" required>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-auto">
+                    <mat-form-field appearance="fill">
+                      <mat-label>Username</mat-label>
+                      <input matInput [(ngModel)]="user.username" required>
+                    </mat-form-field>
+                </div>                  
+                <div class="col-md-auto">
+                    <mat-form-field appearance="fill">
+                      <mat-label>Email address</mat-label>
+                      <input matInput [(ngModel)]="user.email" required>
+                    </mat-form-field>
+                </div>               
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter your password</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="user.password">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Confirm password</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="confirmPass">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-auto">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Role</mat-label>
+                        <mat-select required [(ngModel)]="user.role" >
+                          <mat-option value="E" >Employee</mat-option >
+                          <mat-option value="C">Customer</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>                  
+                <div class="col-md-auto">
+                    <mat-form-field appearance="fill">
+                      <mat-label>IBAN</mat-label>
+                      <input matInput [(ngModel)]="user.iban" type="number">
+                    </mat-form-field>
+                </div>               
+            </div>
+        </div>
+        <button mat-raised-button color="primary" (click)="registerClicked()">Register</button>
+    </div>
+</div>

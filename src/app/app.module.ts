@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +22,13 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DeleteDialogComponent } from './films-menu/delete-dialog/delete-dialog.component';
 import { EditWindowComponent } from './films-menu/edit-window/edit-window.component';
+import { RegisterFormComponent } from './register-form/register-form.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatIconModule} from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +38,8 @@ import { EditWindowComponent } from './films-menu/edit-window/edit-window.compon
     FilmsMenuToolbarComponent,
     FilmsMenuAddWindowComponent,
     DeleteDialogComponent,
-    EditWindowComponent
+    EditWindowComponent,
+    RegisterFormComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +52,13 @@ import { EditWindowComponent } from './films-menu/edit-window/edit-window.compon
     MatDialogModule,
     MatGridListModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatChipsModule,
+    ReactiveFormsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

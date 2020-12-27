@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-auto">
-            <img [src]="data.film.poster" alt="poster" height="290" width="190">
+            <img [src]="current_film.poster" alt="poster" height="290" width="190">
         </div>
         <div class="col-md-auto">
             <h1>Edit Film Details</h1>
@@ -10,25 +10,25 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Title</span>
                 </div>
-                <input type="text" class="form-control" [(ngModel)]="data.film.title">
+                <input type="text" class="form-control" [(ngModel)]="current_film.title">
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Release Year</span>
                 </div>
-                <input type="text" class="form-control" [(ngModel)]="data.film.year">
+                <input type="text" class="form-control" [(ngModel)]="current_film.year">
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Genre</span>
                 </div>
-                <input type="text" class="form-control" [(ngModel)]="data.film.genre">
+                <input type="text" class="form-control" [(ngModel)]="current_film.genre">
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Runtime (minutes)</span>
                 </div>
-                <input type="text" class="form-control" [(ngModel)]="data.film.runtime">
+                <input type="text" class="form-control" [(ngModel)]="current_film.runtime">
             </div>
             <ngb-alert *ngIf="showSuccess" type="success">{{response.message}}</ngb-alert>
             <ngb-alert *ngIf="showFailure" type="success">{{response.message}}</ngb-alert>
